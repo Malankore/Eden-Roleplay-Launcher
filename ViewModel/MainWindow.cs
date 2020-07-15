@@ -103,7 +103,7 @@ namespace Eden_Roleplay.ViewModel
         private void GetNextVersion()
         {
             var client = new RestClient("https://github.com/Malankore/");
-            var request = new RestRequest("EdenLauncher/releases/latest");
+            var request = new RestRequest("Eden-Roleplay-Launcher/releases/latest");
             var response = client.Get(request);
             var gr = JsonConvert.DeserializeObject<Model.GitRelease>(response.Content);
             if (gr.tag_name != Version)
