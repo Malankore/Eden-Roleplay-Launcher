@@ -88,13 +88,13 @@ namespace Eden_Roleplay.ViewModel
 
         private void Update()
         {
-            Process.Start(new ProcessStartInfo("https://github.com/Malankore/EdenLauncher/releases/latest") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://https://github.com/Malankore/Eden-Roleplay-Launcher/releases/latest") { UseShellExecute = true });
         }
 
         private void LoadChangeLog()
         {
-            var client = new RestClient("https://pastebin.com/");
-            var request = new RestRequest("raw/HScaNN7f", DataFormat.Json);
+            var client = new RestClient("http://tjeynon.us/");
+            var request = new RestRequest("edenchanges.json", DataFormat.Json);
             var response = client.Get(request);
             var data = JsonConvert.DeserializeObject<List<Model.ChangeLog>>(response.Content);
             ChangeLog = new ObservableCollection<Model.ChangeLog>(data.OrderByDescending(o => o.Date));
